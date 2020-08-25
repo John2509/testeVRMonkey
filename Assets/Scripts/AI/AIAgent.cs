@@ -339,8 +339,19 @@ public class AIAgent : Character {
 	{
 		dead = true;
 		this.SetState(States.idle);
+        EndChase();
 		Instantiate(explosionEffect, transform.position + explosionPosition, transform.rotation, transform.parent);
 		StopAllCoroutines();
 		this.transform.gameObject.SetActive(false);
 	}
+
+    public void EndChase()
+	{
+        if (chasing)
+        {
+            chasing = false;
+            GameLogic.instance.RemoveChaser();
+
+        }
+    }
 }

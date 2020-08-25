@@ -234,11 +234,11 @@ public class GameLogic : MonoBehaviour {
                     player.canDrain = true;
                     break;
 				case Upgrade.Type.shoot:
-					ShowMessageBox("You acquired the SHOOT power! Press S to destroy enemies!");
+					ShowMessageBox("You acquired the SHOOT power! Press S to destroy enemies! Be careful that it uses a lot of energy");
 					player.canShoot = true;
 					break;
 				case Upgrade.Type.fly:
-					ShowMessageBox("You acquired the FLY power! Press D to fly!");
+					ShowMessageBox("You acquired the FLY power! Press D to fly! CAN'T MOVE WHILE FLYING");
 					player.canFly = true;
 					break;
 			}
@@ -259,11 +259,11 @@ public class GameLogic : MonoBehaviour {
                     player.canDrain = true;
                     break;
 				case Upgrade.Type.shoot:
-					ShowMessageBox("You acquired the SHOOT power! Press ? to destroy enemies!");
+					ShowMessageBox("You acquired the SHOOT power! Press ? to destroy enemies! Be careful that it uses a lot of energy");
 					player.canShoot = true;
 					break;
 				case Upgrade.Type.fly:
-					ShowMessageBox("You acquired the FLY power! Hold ? to fly!");
+					ShowMessageBox("You acquired the FLY power! Hold ? to fly! CAN'T MOVE WHILE FLYING");
 					player.canFly = true;
 					break;
 			}

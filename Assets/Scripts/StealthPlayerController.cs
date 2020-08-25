@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class StealthPlayerController : Character
 {
@@ -64,7 +65,7 @@ public class StealthPlayerController : Character
 	public float shockCost = 10;
 	public float drainSpeed = 0;
 	public float shootCost = 30;
-	public float onFloorTresehold = 0.01f;
+	public float onFloorTresehold = 1;
 	public GameObject shockObject;
 
 	public GameObject drainObject;
@@ -537,6 +538,6 @@ public class StealthPlayerController : Character
 
 	public bool IsOnFloor()
 	{
-		return Mathf.Abs(rb.velocity.y) <= onFloorTresehold;
+		return Physics.Raycast(transform.position + Vector3.up * 0.5f, -Vector3.up, onFloorTresehold);
 	}
 }

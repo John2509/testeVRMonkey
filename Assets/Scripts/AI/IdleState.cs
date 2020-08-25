@@ -45,12 +45,7 @@ public class IdleState : IEnemyState
 
         agent = newAgent;
 
-        if (agent.chasing)
-        {
-            agent.chasing = false;
-            GameLogic.instance.RemoveChaser();
-
-        }
+        agent.EndChase();
         currentPatrolNode = startingPatrolNode;
         agent.lastPatrolNode = currentPatrolNode;
         agent.navAgent.Stop();
